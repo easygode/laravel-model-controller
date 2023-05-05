@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
-         @vite('resources/js/app.js')
-    </head>
-    <body>
-        <div class="container">
-            <h1>Template Classe 89</h1>
-            <img src="{{ Vite::asset('resources/img/pluto.webp') }}" alt="" srcset="">
-        </div>
+@extends('layouts.app')
 
-    </body>
-</html>
+@section('page.main')
+<section>
+    <div class="container">
+        @foreach ($movies as $movie)
+
+        <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card {{ $movie->title}}</h5>
+              <p class="card-text">{{ $movie->original_title }}</p>
+              <a href="#" class="btn btn-primary">Vai al dettaglio</a>
+            </div>
+          </div>
+          @endforeach
+    </div>
+</section>
+@endsection
